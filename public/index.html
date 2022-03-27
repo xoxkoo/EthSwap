@@ -7,12 +7,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="theme-color" content="#000000" />
+
+    <link rel="stylesheet" href="../assets/css/style.min.css">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -22,10 +22,60 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Dapp University Starter Kit</title>
+    <title>EthSwap</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <header>
+      <h1 class="logo">EthSWAP</h1>
+      <div class="logo">
+        <!-- <img src="logo.png" alt=""> -->
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="box">
+        
+        <div class="row">
+        
+            
+          <input type="radio" id="radio-0" name="select" checked>
+          <label for="radio-0">
+              <div class="btn">Sell</div>
+          </label>
+        
+
+          <input type="radio" id="radio-1" name="select">
+          <label for="radio-1">
+              <div class="btn">Buy</div>
+          </label>
+        
+
+          <div class="blob"></div>
+
+        </div>
+
+        <div class="row">
+          <div class="currency">AToken</div>
+          <input type="number" value="100">
+        </div>
+
+        <div class="row">
+          <div class="currency">Eth</div>
+          <input type="number" value="1">
+        </div>
+  
+        <div>
+          <div class="faded">
+            1ETH &rarr; 100AdurToken
+          </div>
+          <button class="btn btn-primary">Exchange</button>
+        </div>
+
+      </div>
+    </div>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.

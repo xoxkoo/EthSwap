@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap')
+$primary: #6bbfce
+$light: #ffffff
+$dark: #0f0f0f
+$radius: 2rem
+
+body
+    background: #253237
+    font-family: 'DM Sans', sans-serif
+    background: #231069 url('../../public/bg.jpg') top no-repeat
+    background-size: cover
+
+
+.logo
+    margin-top: 1rem
+    margin-bottom: 5rem
+    font-family: 'Lustria', serif
+    color: $primary
+    font-size: 4rem
+    font-weight: normal
+    text-align: center
+
+.container
+    width: 90%
+    margin: 0 auto
+
+.box
+    height: 100%
+    font-size: 1.2rem
+    width: 18.75rem
+    height: 25rem
+    background: transparentize($light, .4)
+    backdrop-filter: blur(7px)
+    border: 2px solid #0f0f0f
+    margin: auto
+    border-radius: $radius
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 1.5em 1em
+
+.row
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &:first-of-type
+        padding-bottom: .3em
+        border-bottom: 1px solid $dark
+        position: relative
+
+        & .btn:hover
+            // color: lighten($dark, 30)
+            text-decoration: underline
+            // border: 2px solid $dark
+
+input[type="number"] 
+    padding: .5em .2em
+    // border-radius: $radius
+    border: 2px solid rgba(0, 0, 0, 0)
+
+    width: 20%
+    text-align: center
+    background: transparentize($light, .5)
+    background: none
+    font-size: 1.2rem
+    transition: .3s
+    &:hover,
+    &:focus
+        outline: 0
+        border-bottom: 2px solid $dark
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+  margin: 0
+
+/* Firefox */
+input[type=number]
+  -moz-appearance: textfield
+
+.currency
+    text-align: center
+    // background: $light
+    border: 2px solid $dark
+    padding: .5em 1.5em
+    width: 4.5rem
+    // color: $light
+    border-radius: $radius
+
+.faded
+    font-size: .9rem
+    color: #383838
+    text-align: center
+    margin-bottom: .5em                                                                         
+
+.btn
+    position: relative
+    color: $dark
+    background: none
+    border: 2px solid transparent
+    font-size: 1.1rem
+    // border: 2px solid $primary
+    border-radius: $radius
+    padding: 1em 2em
+    transition: .3s
+    cursor: pointer
+    z-index: 1
+
+.selected
+    color: $light
+    &:hover
+        color: $light
+        background: lighten($dark, 5)
+
+.btn-primary
+    color: $light
+    width: 100%
+    background: $dark
+    
+
+// blob stuff
+input[type="radio"] 
+	&:checked 
+		& + label .btn
+			color: #fff
+
+input[type="radio"]
+    display: none
+
+input[id="radio-0"] 
+	&:checked 
+		~ .blob
+            animation-name: moveLeft
+
+input[id="radio-1"] 
+	&:checked 
+		~ .blob
+            animation-name: moveRight
+
+.blob 
+    position: absolute
+    background: $dark
+    height: 3.5rem
+    width: 6.25rem
+    border-radius: $radius
+    z-index: 0
+    animation-duration: .2s
+    animation-fill-mode: forwards
+    animation-timing-function: ease-out
+
+@keyframes moveRight
+    0% 
+        transform: scale(1) 
+    50%  
+        transform: scale(1.1, 0.8) translateX(100%)
+    100% 
+        transform: scaleY(1) translateX(195%)
+
+@keyframes moveLeft
+    0% 
+        transform: scale(1) translateX(195%)
+    50%  
+        transform: scale(1.1, 0.8) translateX(100%)
+    100% 
+        transform: scaleY(1) translateX(1%)
